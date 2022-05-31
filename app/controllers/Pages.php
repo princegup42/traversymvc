@@ -5,4 +5,14 @@ class Pages
   {
     echo 'Pages loaded';
   }
+
+  public function index()
+  {
+    # code...
+  }
+
+  public function about($id = null) {
+    echo 'sfasf';
+    echo $id;
+  }
 }
