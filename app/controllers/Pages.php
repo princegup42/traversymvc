@@ -1,5 +1,5 @@
 <?php
-class Pages {
+class Pages extends Controller {
     public function __construct() {
         // echo 'Pages Loaded';
     }
@@ -7,6 +7,7 @@ class Pages {
     public function index() {
         # code...
         echo 'index...';
+        $this->view( 'Hello...' );
     }
 
     public function about( $id ) {
