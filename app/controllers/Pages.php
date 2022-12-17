@@ -12,7 +12,9 @@ class Pages extends Controller {
     }
 
     public function about() {
-        // echo $id;
-        $this->view( 'pages/about' );
+        $data = [
+            'title' => 'Welcome About Page',
+        ];
+        $this->view( 'pages/about', $data );
     }
 }
