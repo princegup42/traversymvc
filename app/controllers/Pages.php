@@ -5,12 +5,14 @@ class Pages extends Controller {
     }
 
     public function index() {
-        # code...
-        echo 'index...';
-        $this->view( 'Hello...' );
+        $data = [
+            'title' => 'Welcome',
+        ];
+        $this->view( 'pages/index', $data );
     }
 
-    public function about( $id ) {
-        echo $id;
+    public function about() {
+        // echo $id;
+        $this->view( 'pages/about' );
     }
 }
