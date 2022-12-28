@@ -2,21 +2,20 @@
 class Pages extends Controller {
     public function __construct() {
         // echo 'Pages Loaded';
-        $this->postModel = $this->model( 'Post' );
     }
 
     public function index() {
-        $posts = $this->postModel->getPosts();
         $data = [
-            'title' => 'Welcome',
-            'posts' => $posts,
+            'title'       => 'SharePosts',
+            'description' => 'Simple Social Network build on the TraversyMVC PHP Framework.',
         ];
         $this->view( 'pages/index', $data );
     }
 
     public function about() {
         $data = [
-            'title' => 'Welcome About Page',
+            'title'       => 'About Page',
+            'description' => 'App to share posts with other users',
         ];
         $this->view( 'pages/about', $data );
     }
