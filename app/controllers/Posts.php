@@ -1,22 +1,21 @@
 <?php
 class Posts extends Controller {
     public function __construct() {
-        // echo 'posts Loaded';
+        if ( !isLoggedIn() ) {
+            redirect( 'users/login' );
+        }
+
+        $this->postModel = $this->model( 'Post' );
     }
 
     public function index() {
-        $data = [
-            'title'       => 'SharePosts',
-            'description' => 'Simple Social Network build on the TraversyMVC PHP Framework.',
-        ];
-        $this->view( 'posts/index', $data );
-    }
+        // Get posts
+        $posts = $this->postModel->getPosts();
 
-    public function about() {
         $data = [
-            'title'       => 'About Page',
-            'description' => 'App to share posts with other users',
+            'posts' => $posts,
         ];
-        $this->view( 'posts/about', $data );
+
+        $this->view( 'posts/index', $data );
     }
 }
